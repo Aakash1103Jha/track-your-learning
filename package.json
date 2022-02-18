@@ -5,7 +5,11 @@
 	"main": "./server/index.js",
 	"scripts": {
 		"dev": "nodemon ./server/index.js --trace-warnings",
-		"build": "webpack --config ./server/webpack.config.js"
+		"build-server": "CI=false && webpack --config ./server/webpack.config.js",
+		"build-client": "cd ./client && npm run build",
+		"build": "npm run build-server && npm run build-client",
+		"pre-deploy": "mv ./client/build dist/",
+		"deploy-local": "npm run build && npm run pre-deploy && node ./dist/main-*.js"
 	},
 	"repository": {
 		"type": "git",
