@@ -1,0 +1,1 @@
+[![release-ci](https://github.com/Aakash1103Jha/track-your-learning/actions/workflows/release-ci.yml/badge.svg?branch=release)](https://github.com/Aakash1103Jha/track-your-learning/actions/workflows/release-ci.yml)
