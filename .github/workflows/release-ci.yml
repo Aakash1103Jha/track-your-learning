@@ -2,9 +2,9 @@ name: release-ci
 
 on:
   push:
-    branches: [ release ]
+    branches: [ release, staging, development ]
   pull_request:
-    branches: [ release ]
+    branches: [ release, staging ]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -19,4 +19,5 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
+    - run: npm install && cd ./client && npm install
     - run: npm run build
